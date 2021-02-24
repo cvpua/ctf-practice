@@ -4,6 +4,7 @@ const handlebars = require('express-handlebars');
 
 const app = express();
 const xss = require('./routes/xss/login');
+const bruteforce = require('./routes/bruteforce/password');
 
 app.set('view engine', 'hbs');
 
@@ -23,6 +24,7 @@ app.use(express.urlencoded({extended:false}))
 
 
 app.use('/',xss);
+app.use('/',bruteforce);
 app.use('/public', express.static('public'))
 
 

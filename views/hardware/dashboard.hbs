@@ -1,0 +1,35 @@
+
+<style>
+    table, th, td {
+     border: 1px solid black;
+}
+</style>
+<div>
+    <h1>
+        Welcome to YSES Hardware Store
+    </h1>
+    <form>
+        <input
+            type="search"
+            placeholder="Search"
+        />
+        <input
+            type="submit"
+            value="Search"
+        />
+    </form>
+    <div>
+        <table style="width:40%">
+            <th>Name</th>
+            <th>Description</th>
+            <th>Stocks</th>
+        {{#each tools.stocks}}
+            <tr>
+                <td>{{this.toolName}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.stock}}</td>
+            </tr>
+        {{/each}}
+        </table>
+    </div>
+</div>
