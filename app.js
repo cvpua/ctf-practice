@@ -1,6 +1,6 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
-
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const xss = require('./routes/xss/login');
@@ -22,12 +22,12 @@ app.engine('hbs', handlebars({
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 
-
+app.use(cookieParser());
 app.use('/',xss);
 app.use('/',bruteforce);
 app.use('/public', express.static('public'))
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
