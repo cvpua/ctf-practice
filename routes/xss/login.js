@@ -9,7 +9,7 @@ router.get('/hardware-store',(req,res) =>{
     
 });
 
-router.get('/hardware-store/dashboard/whatIsThis',(req,res) => {
+router.post('/hardware-store/dashboard/whatIsThis',(req,res) => {
     const ua = req.headers['user-agent']
     const browser = ua.split('/')[0]
     
