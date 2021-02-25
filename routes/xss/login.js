@@ -14,9 +14,9 @@ router.get('/hardware-store/dashboard/whatIsThis',(req,res) => {
     const browser = ua.split('/')[0]
     
     if(JSON.stringify(browser) === JSON.stringify('curl') || JSON.stringify(browser) === JSON.stringify('PostmanRuntime')){
-        res.json({error : "invalid request/browser"})
+        res.json({error : "invalid request"})
     }else if(browser.length < 6){
-        res.json({error: "invalid request/browser"})
+        res.json({error: "invalid request"})
     }else{
         res.json({auth:'hardwar3manag3r'});
     } 
