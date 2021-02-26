@@ -1,14 +1,45 @@
-<h3> 
-    PLDT Wifi Router
-</h3> 
-<h2>
-    Sign-in:
-</h2>
-    <form method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Submit">
-    </form> 
-
+<style>
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 600px;
+    }
+    .login-form{
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 20px;
+        padding: 10px;
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+<div class="main">
+    <h3> 
+        PLDT WiFi Router
+    </h3> 
+    <div class="login-form">
+        <h4>
+            Please login to continue:
+        </h4>
+        <form method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="admin"><br><br>
+            <label for="password">Password :  </label>
+            <input type="password" id="password" name="password"><br><br>
+            <div>
+            <input type="submit" value="Submit">
+            </div>
+        </form> 
+    </div>
+    <!-- It seems that you forgot your password. Here's some hint:-->
+    <!-- 1. The password is a 5 digit combination from 1-5 no repetition. -->
+    <!-- 2. The first digit starts with 1 or 2? I forgot -->
+    <!-- 3. Doing it with script will help you a lot -->
+    <!-- 4. Username is admin -->
+  
+   
+</div>
