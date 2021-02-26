@@ -10,7 +10,7 @@ router.get('/pldtwifi',(req,res) =>{
 });
 
 router.post('/pldtwifi',(req,res) => {
-    console.log(req.body)
+    
     if(req.body.username === "admin" && req.body.password.toString() === pwd){
         // res.render('./wifi/router',{layout:'index',title: 'Success'});
         res.json({flag:"flag{brut3_f0rc3_is_h3ad4ch3}"});
