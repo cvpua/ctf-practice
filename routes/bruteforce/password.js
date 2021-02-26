@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pwd = "13245";
+const pwd = "2143";
 
 
 router.get('/pldtwifi',(req,res) =>{
