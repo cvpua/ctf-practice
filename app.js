@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const xss = require('./routes/xss/login');
 const bruteforce = require('./routes/bruteforce/password');
+const csurf = require('./routes/csurf/flag');
 
 app.set('view engine', 'hbs');
 
@@ -25,6 +26,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(cookieParser());
 app.use('/',xss);
 app.use('/',bruteforce);
+app.use('/',csurf);
 app.use('/public', express.static('public'))
 
 
