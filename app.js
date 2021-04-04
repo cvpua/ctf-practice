@@ -6,6 +6,7 @@ const app = express();
 const xss = require('./routes/xss/login');
 const bruteforce = require('./routes/bruteforce/password');
 const csurf = require('./routes/csurf/flag');
+const homepage = require('./routes/homepage/home');
 
 app.set('view engine', 'hbs');
 
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 
 app.use(cookieParser());
+app.use('/',homepage);
 app.use('/',xss);
 app.use('/',bruteforce);
 app.use('/',csurf);
