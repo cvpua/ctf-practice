@@ -1,5 +1,3 @@
-
-
 let board = [[0,0,0],[0,0,0],[0,0,0]]
 let playerTurn = 0;
 let result;
@@ -7,15 +5,15 @@ let player = null;
 let gameResult = "pending";
 let roundCount = 1;
 
-
-
 const move = (tile,coordinates) => {
     
     if (player && gameResult == "pending"){
         let element = document.querySelector(`div#${tile}`);
         let x = coordinates[0]
         let y = coordinates[1]
+        var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         
+
         if (playerTurn % 2 == 0 && element.innerText == "-" ){
             element.textContent = "X";
             playerTurn++;
@@ -25,13 +23,13 @@ const move = (tile,coordinates) => {
             if(result){
                 if(player != "X"){
                     gameResult = "lose";
-                    getResults();
+                    getResults(token);
                     roundCount++;
                 }
             }
             else if(playerTurn == 9){
                 gameResult = "draw";
-                getResults();
+                getResults(token);
                 roundCount++; 
             }
             if(playerTurn < 9 && player == "X"){
@@ -51,13 +49,13 @@ const move = (tile,coordinates) => {
                 console.log("O Win!")
                 if(player != "O"){
                     gameResult = "lose";
-                    getResults();
+                    getResults(token);
                     roundCount++;
                 }
             }
             else if(playerTurn == 9){
                 gameResult = "draw"
-                getResults();
+                getResults(token);
                 roundCount++;
             }
             if(playerTurn < 9 && player == "O"){
@@ -89,11 +87,11 @@ const opponentMove = (info) =>{
 }
 
 
-const getResults = () => {
+const getResults = (token) => {
     
     fetch('/tictactoe',{
         method: "POST",
-	        headers: { "Content-Type": "application/json" },
+	        headers: { "Content-Type": "application/json",'CSRF-Token': token },
 	        body: JSON.stringify({result : gameResult})
 		})
         .then(res => res)
@@ -106,7 +104,7 @@ const getResults = () => {
 
 const giveClue = () => {
     let element = document.querySelector('div#secretPath');
-    element.innerText = "Well I guess you can't defeat me.\n Thank you for playing, here's your prize: \n /secretPath or /secretPath.html dunno what works xD";
+    element.innerText = "Well I guess you can't defeat me.\n Thank you for playing, here's your prize: \n /secretPath";
 }
 
 const resetBoard = () => {
@@ -353,4 +351,5 @@ const minValue = (boardCopy,turnCount,depth) => {
     }
     return leaf;
 }
+
 

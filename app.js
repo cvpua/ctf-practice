@@ -1,6 +1,7 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 const app = express();
 const xss = require('./routes/xss/login');
@@ -23,6 +24,7 @@ app.engine('hbs', handlebars({
 //body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
+app.use(session({secret :'mysupersecret',resave: false, saveUninitialized : false}))
 
 app.use(cookieParser());
 app.use('/',homepage);
