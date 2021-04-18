@@ -1,0 +1,10 @@
+version : '3'
+services:
+    ctf-bullet:
+      build:
+          context: .
+          dockerfile: Dockerfile
+      image: ctf:bullet
+      container_name: ctf-bullet
+      ports:
+          - "8085:8085"
