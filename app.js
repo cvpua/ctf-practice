@@ -34,6 +34,6 @@ app.use('/',csurf);
 app.use('/public', express.static('public'))
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8085;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
