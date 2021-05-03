@@ -6,34 +6,61 @@
         justify-content: center;
         height: 600px;
     }
-    .login-form{
+    .login-container{
         border-style: solid;
-        border-width: 2px;
-        border-radius: 20px;
+        border-color : lightgray;
+        border-width: 1px;
         padding: 10px;
         width: 450px;
+        height: 300px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        box-shadow: 0.5px 0.5px 0.5px 0.5px #888888;
+        background-image: linear-gradient(to top, lightgray , white);
+    }
+    #router{
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 20px;
+        width: 400px;
+        text-align: center;
+    }
+    #form{
+
+    }
+    #button{
+        margin-left: 30%;
+    }
+    input[type="submit"],input[type="reset"]{
+        background-color: black;
+        color : white;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        width: 70px;
+        padding: 5px 0px;
+        border-style: none;
+        background-image: linear-gradient(to top, gray , black);
     }
 </style>
 <div class="main">
-    <h3> 
-        PLDT WiFi Router
-    </h3> 
-    <div class="login-form">
-        <h4>
-            Please login to continue:
-        </h4>
-        <form method="POST">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="admin"><br><br>
-            <label for="password">Password :  </label>
-            <input type="password" id="password" name="password" pattern="[2-4][1][2-4]{2}"><br><br>
-            <div>
-            <input type="submit" value="Submit">
-            </div>
-        </form> 
+    <div class="login-container">
+        <div id = "router">
+            <h4>
+                300Mbps WLAN ADSL2+ Router Login
+            </h4>
+        </div>
+        <div id = "form">
+            <form method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="admin"><br><br>
+                <label for="password">Password :  </label>
+                <input type="password" id="password" name="password" pattern="[2-4][1][2-4]{2}"><br><br>
+                <div id = "button">
+                <input type="submit" value="Login">
+                <input type="reset"  value="Reset">
+                </div>
+            </form>
+        </div> 
     </div>
     <!-- Username is admin -->
   
