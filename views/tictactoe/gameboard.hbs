@@ -415,24 +415,30 @@ const minValue = (boardCopy,turnCount,depth) => {
 		display: flex;
 		flex-direction: row;
 	}
+    .reset-container{
+        margin-top: 20px;
+    }
+    #reset{
+		width: 150px;
+		font-size: 20px;
+		border-radius: 10px;
+	}
 </style>
 </head>
-<body>
-	<div>
+
+<div>
 		<div>
-			There will be a surprise on a certain round :)
+			There will be a surprise on a certain round
 		</div>
 		<div id = 'round'>
 			Round: 
 		</div>
-		<button id = "reset" onClick = "resetBoard()">
-			Reset board
-		</button>
+		
 		<div id = 'secretPath'>
 
 		</div>
-	</div>
-	<div id="mainScreen">
+</div>
+<div id="mainScreen">
 		
 		<div class="header">
 			<p id = "greetings">
@@ -489,6 +495,11 @@ const minValue = (boardCopy,turnCount,depth) => {
 			<button class = "choices" id = "buttonO"  onclick="choosePlayer('O')">O</button>
 		</div>
 	</div>
+    <div class = "reset-container">
+    <button id = "reset" onClick = "resetBoard()">
+			Reset board
+		</button>
+    </div>
     <meta name="csrf-token" content={{csrfToken}}>
 
 </div>
