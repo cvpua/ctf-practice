@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const tools = require('../../Tools');
-const note = 'Inventory can only be viewd by the manager';
+const note = 'Inventory can only be viewed by the manager';
 
 router.get('/hardware-store',(req,res) =>{
     
